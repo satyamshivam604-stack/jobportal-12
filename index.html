@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Northstar Jobs | Candidate Portal</title>
+    <meta name="description" content="A modern job portal with application forms and backend submission tracking." />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">Northstar Jobs</div>
+          <h1>Apply to the right role with a form that feels simple, calm, and fast.</h1>
+          <p>
+            Browse open roles, complete the application form, and send your submission to a live backend that stores
+            every candidate response.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#application-form">Start application</a>
+            <a class="button button-secondary" href="#open-roles">View open roles</a>
+          </div>
+          <dl class="hero-stats">
+            <div>
+              <dt>Open roles</dt>
+              <dd id="role-count">3</dd>
+            </div>
+            <div>
+              <dt>Response time</dt>
+              <dd>24 hrs</dd>
+            </div>
+            <div>
+              <dt>Application status</dt>
+              <dd>Live backend</dd>
+            </div>
+          </dl>
+        </div>
+        <aside class="hero-panel">
+          <div class="panel-card spotlight">
+            <span class="chip">Featured role</span>
+            <h2>Backend Engineer</h2>
+            <p>Own the APIs behind the candidate journey and support form submission persistence.</p>
+            <ul>
+              <li>Node.js</li>
+              <li>API design</li>
+              <li>Data storage</li>
+            </ul>
+          </div>
+          <div class="panel-card meter">
+            <span>Hiring pipeline</span>
+            <div class="meter-bar"><span></span></div>
+            <small>Applications are stored instantly when submitted.</small>
+          </div>
+        </aside>
+      </header>
+
+      <main class="content-grid">
+        <section class="section panel" id="open-roles">
+          <div class="section-heading">
+            <span>Open roles</span>
+            <h2>Roles that are ready for applicants today</h2>
+          </div>
+          <div id="jobs-grid" class="jobs-grid"></div>
+        </section>
+
+        <section class="section panel application-panel" id="application-form">
+          <div class="section-heading">
+            <span>Application form</span>
+            <h2>Fill in your details and submit to the backend</h2>
+          </div>
+
+          <form id="applicationForm" class="application-form" novalidate>
+            <div class="form-row two-up">
+              <label>
+                <span>Full name *</span>
+                <input name="fullName" type="text" placeholder="Alex Morgan" required />
+              </label>
+              <label>
+                <span>Email *</span>
+                <input name="email" type="email" placeholder="alex@email.com" required />
+              </label>
+            </div>
+
+            <div class="form-row two-up">
+              <label>
+                <span>Phone</span>
+                <input name="phone" type="tel" placeholder="+1 (555) 012-3456" />
+              </label>
+              <label>
+                <span>Role *</span>
+                <select name="role" id="roleSelect" required></select>
+              </label>
+            </div>
+
+            <div class="form-row three-up">
+              <label>
+                <span>Location</span>
+                <input name="location" type="text" placeholder="Remote / New York / Hybrid" />
+              </label>
+              <label>
+                <span>Work mode</span>
+                <select name="workMode">
+                  <option value="Remote">Remote</option>
+                  <option value="Hybrid">Hybrid</option>
+                  <option value="On-site">On-site</option>
+                </select>
+              </label>
+              <label>
+                <span>Availability *</span>
+                <select name="availability" required>
+                  <option value="">Choose one</option>
+                  <option value="Immediately">Immediately</option>
+                  <option value="2 weeks">2 weeks</option>
+                  <option value="1 month">1 month</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form-row two-up">
+              <label>
+                <span>Years of experience *</span>
+                <select name="experience" required>
+                  <option value="">Choose one</option>
+                  <option value="0-1 years">0-1 years</option>
+                  <option value="2-4 years">2-4 years</option>
+                  <option value="5+ years">5+ years</option>
+                </select>
+              </label>
+              <label>
+                <span>Portfolio / LinkedIn</span>
+                <input name="portfolio" type="url" placeholder="https://..." />
+              </label>
+            </div>
+
+            <label>
+              <span>Resume URL</span>
+              <input name="resumeUrl" type="url" placeholder="https://drive.google.com/..." />
+            </label>
+
+            <label>
+              <span>Cover letter</span>
+              <textarea name="coverLetter" rows="6" placeholder="Tell us why this role fits you."></textarea>
+            </label>
+
+            <button class="button button-primary submit-button" type="submit">Submit application</button>
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <aside class="section panel sidebar">
+          <div class="section-heading">
+            <span>Live backend</span>
+            <h2>Recent applications</h2>
+          </div>
+          <div id="applicationsList" class="applications-list"></div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "job-portal-with-form-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Job portal website with a form-based application flow and Node backend persistence.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
